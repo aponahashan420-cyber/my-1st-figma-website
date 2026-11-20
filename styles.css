@@ -1,0 +1,401 @@
+:root {
+  color-scheme: dark;
+  --canvas-w: 1600px;
+  --canvas-h: 960px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  height: 100%;
+  background: #000;
+  overflow: hidden;
+}
+
+body {
+  font-family: "Barlow", "Nirmala UI", "Noto Sans Bengali", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: geometricPrecision;
+}
+
+.stage {
+  width: 100vw;
+  height: 100vh;
+  height: 100dvh;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  background: #000;
+}
+
+.canvas {
+  width: var(--canvas-w);
+  height: var(--canvas-h);
+  position: relative;
+  flex: none;
+  transform-origin: center center;
+  overflow: hidden;
+  background: #000;
+}
+
+.bg {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at 57% 117%,
+    rgb(135, 135, 135) 0%,
+    rgb(0, 0, 0) 100%
+  );
+}
+
+.shoe {
+  position: absolute;
+  left: 741px;
+  top: 74px;
+  width: 836px;
+  height: 836px;
+  object-fit: cover;
+  z-index: 3;
+  user-select: none;
+  pointer-events: none;
+}
+
+.shadow {
+  position: absolute;
+  left: 806.9px;
+  top: 815.07px;
+  width: 731.38px;
+  height: 54.25px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle at 100% 51%,
+    rgb(103, 102, 102) 0%,
+    rgb(29, 29, 29) 100%
+  );
+  filter: blur(12.5px);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.orb {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(125, 125, 125, 0.15);
+  -webkit-backdrop-filter: blur(17.5px);
+  backdrop-filter: blur(17.5px);
+  pointer-events: none;
+}
+
+.orb::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1.5px;
+  background: var(--stroke);
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+}
+
+.orb-back {
+  left: 832.06px;
+  top: 110.81px;
+  width: 340.02px;
+  height: 340.02px;
+  z-index: 2;
+  --stroke: radial-gradient(
+    circle at 65% 62%,
+    rgb(242, 100, 110) 0%,
+    rgba(102, 102, 102, 0) 100%
+  );
+}
+
+.orb-right {
+  left: 1359.04px;
+  top: 241.59px;
+  width: 209.24px;
+  height: 209.24px;
+  z-index: 4;
+  --stroke: radial-gradient(
+    circle at 13% 14%,
+    rgb(255, 97, 114) 0%,
+    rgba(102, 102, 102, 0) 100%
+  );
+}
+
+.orb-front {
+  left: 926.02px;
+  top: 623.26px;
+  width: 246.05px;
+  height: 246.05px;
+  z-index: 5;
+  --stroke: radial-gradient(
+    circle at 60% 19%,
+    rgb(255, 255, 255) 0%,
+    rgba(102, 102, 102, 0) 100%
+  );
+}
+
+.copy {
+  position: absolute;
+  left: 193px;
+  top: 162px;
+  width: 746px;
+  height: 692px;
+  z-index: 6;
+}
+
+.copy h1 {
+  position: absolute;
+  left: 0;
+  top: 0;
+  margin: 0;
+  width: 746px;
+  color: #fff;
+  font-size: 150px;
+  font-style: italic;
+  font-weight: 800;
+  line-height: 0.86;
+  letter-spacing: 0;
+}
+
+.sku {
+  position: absolute;
+  left: 14px;
+  top: 170px;
+  margin: 0;
+  color: #fff;
+  font-size: 28px;
+  font-style: italic;
+  font-weight: 500;
+  line-height: 34px;
+  letter-spacing: 0.3em;
+  white-space: nowrap;
+}
+
+.price {
+  position: absolute;
+  left: 14px;
+  top: 309px;
+  margin: 0;
+  color: #fff;
+  font-size: 45px;
+  font-style: italic;
+  font-weight: 300;
+  line-height: 54px;
+  letter-spacing: 0.18em;
+  white-space: nowrap;
+}
+
+.currency {
+  font-family: "Nirmala UI", "Noto Sans Bengali", sans-serif;
+  font-style: italic;
+  font-weight: 300;
+}
+
+.desc {
+  position: absolute;
+  left: 14px;
+  top: 405px;
+  width: 505px;
+  margin: 0;
+  color: #fff;
+  font-size: 16px;
+  font-style: italic;
+  font-weight: 300;
+  line-height: 28px;
+  letter-spacing: 0.05em;
+}
+
+.cart {
+  position: absolute;
+  left: 0;
+  top: 613px;
+  width: 196px;
+  height: 79px;
+  border: 0;
+  border-radius: 39.5px;
+  background: #8b2c31;
+  color: #fff;
+  font-family: inherit;
+  font-size: 24px;
+  font-weight: 600;
+  font-style: normal;
+  letter-spacing: 0;
+  line-height: 29px;
+  cursor: pointer;
+  padding: 0;
+}
+
+.cart:hover {
+  background: #9a343a;
+}
+
+.cart:active {
+  background: #742429;
+}
+
+.cart.is-added {
+  background: #6e2328;
+}
+
+.cart:focus-visible,
+.menu a:focus-visible,
+.panel-card button:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 4px;
+}
+
+.status {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.menu a {
+  position: absolute;
+  top: 32px;
+  color: #fff;
+  font-size: 17px;
+  font-weight: 500;
+  font-style: normal;
+  line-height: 20px;
+  letter-spacing: 0.28em;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.menu a:nth-child(1) {
+  left: 457px;
+}
+
+.menu a:nth-child(2) {
+  left: 638px;
+}
+
+.menu a:nth-child(3) {
+  left: 915px;
+}
+
+.menu a:nth-child(4) {
+  left: 1112px;
+}
+
+.menu a:hover {
+  opacity: 0.72;
+}
+
+.rail {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 151px;
+  height: 960px;
+  z-index: 8;
+  background: rgba(195, 44, 52, 0.63);
+}
+
+.mark {
+  position: absolute;
+  inset: 0;
+  width: 151px;
+  height: 960px;
+  display: block;
+}
+
+.rail-label {
+  position: absolute;
+  left: 50%;
+  top: 260px;
+  margin: 0;
+  transform: translateX(-50%);
+  color: #000;
+  font-size: 22px;
+  font-weight: 500;
+  font-style: normal;
+  line-height: 1;
+  letter-spacing: 0.93em;
+  writing-mode: vertical-lr;
+  text-orientation: upright;
+  white-space: nowrap;
+}
+
+.panel {
+  position: fixed;
+  inset: 0;
+  z-index: 30;
+  display: grid;
+  place-items: center;
+  background: rgba(0, 0, 0, 0.55);
+}
+
+.panel[hidden] {
+  display: none;
+}
+
+.panel-card {
+  width: min(440px, calc(100vw - 48px));
+  padding: 32px 32px 28px;
+  background: #161616;
+  color: #fff;
+  border-radius: 28px;
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.45);
+}
+
+.panel-card h2 {
+  margin: 0 0 12px;
+  font-size: 28px;
+  font-weight: 600;
+  font-style: italic;
+  letter-spacing: 0.08em;
+}
+
+.panel-card p {
+  margin: 0 0 24px;
+  font-size: 16px;
+  font-weight: 300;
+  font-style: italic;
+  line-height: 1.6;
+  letter-spacing: 0.03em;
+}
+
+.panel-card button {
+  height: 48px;
+  padding: 0 22px;
+  border: 0;
+  border-radius: 24px;
+  background: #8b2c31;
+  color: #fff;
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  cursor: pointer;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  width: 1600px;
+  height: 960px;
+  z-index: 20;
+  opacity: 0.5;
+  mix-blend-mode: difference;
+  pointer-events: none;
+}

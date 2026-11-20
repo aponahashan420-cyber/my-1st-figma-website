@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Shallow Classic</title>
+    <meta
+      name="description"
+      content="Shallow Classic — a timeless training shoe with a suede upper and gum rubber outsole. SKU 93565A84, ৳2,599."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,500;0,600;1,300;1,500;1,800&family=Noto+Sans+Bengali:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="stage">
+      <article class="canvas" id="home">
+        <div class="bg" aria-hidden="true"></div>
+
+        <div class="orb orb-back" aria-hidden="true"></div>
+        <img
+          class="shoe"
+          src="public/images/shoe.png"
+          alt="Pair of red Shallow low-top sneakers with white laces, white toe caps, and gum-style soles"
+          width="836"
+          height="836"
+        />
+        <div class="shadow" aria-hidden="true"></div>
+        <div class="orb orb-right" aria-hidden="true"></div>
+        <div class="orb orb-front" aria-hidden="true"></div>
+
+        <section class="copy" aria-labelledby="product-title">
+          <h1 id="product-title">SHALLOW</h1>
+          <p class="sku">SKU: 93565A84</p>
+          <p class="price"><span class="currency">৳</span>2,599</p>
+          <p class="desc">
+            Once a training shoe, now a timeless icon, these Shallow shoes pair
+            a suede upper with a gum rubber outsole for a retro look that's
+            perfect for casual wear. The contrast heel tab and 3-Stripes
+            complete the stylish design. Whether you're walking city streets or
+            socializing with friends, these shoes keep you looking good and
+            feeling great.
+          </p>
+          <button type="button" class="cart" id="add-to-cart" aria-pressed="false">
+            ADD TO CART
+          </button>
+          <p class="status" id="cart-status" role="status" aria-live="polite"></p>
+        </section>
+
+        <header class="menu-bar">
+          <nav class="menu" aria-label="Primary">
+            <a href="#home" aria-current="page">HOME</a>
+            <a href="#collection">COLLECTION</a>
+            <a href="#about">ABOUT</a>
+            <a href="#contact">CONTACT</a>
+          </nav>
+        </header>
+
+        <aside class="rail" aria-label="Shallow Classic">
+          <svg class="mark" viewBox="0 0 151 960" aria-hidden="true">
+            <path
+              d="M78.7726 132.482L62.9688 116.67V100.757L78.7755 116.567L78.7726 132.482ZM78.4765 81.7646L78.9825 81.2558L62.25 64.5175L45.5089 81.2558L62.2471 98.0084L78.4765 81.7646ZM45 82.7795V98.6926L61.5284 115.235V99.3223L61.2294 99.0261L45 82.7795ZM95.738 99.0233L79.4943 82.7795L63.262 99.0233L79.4914 115.255L95.738 99.0233ZM96.0341 115.957V100.76L80.2101 116.569V132.482L96.0341 116.673V115.957ZM114 82.7766L97.7706 99.0204L97.4716 99.3194V115.232L114 98.6926V82.7766ZM113.491 81.2529L96.7529 64.5175L80.0002 81.2558L96.7529 98.0084L113.491 81.2529Z"
+              fill="#000"
+            />
+          </svg>
+          <p class="rail-label">SHALLOW CLASSIC</p>
+        </aside>
+      </article>
+    </div>
+
+    <section class="panel" id="collection" hidden>
+      <div class="panel-card">
+        <h2>Collection</h2>
+        <p>Shallow Classic is the only pair in this drop. Red suede, white foxing, gum-look sole.</p>
+        <button type="button" data-close>Close</button>
+      </div>
+    </section>
+    <section class="panel" id="about" hidden>
+      <div class="panel-card">
+        <h2>About</h2>
+        <p>
+          Once a training shoe, now a timeless icon. Shallow is built for city
+          streets and long conversations — a retro silhouette with a contrast heel tab.
+        </p>
+        <button type="button" data-close>Close</button>
+      </div>
+    </section>
+    <section class="panel" id="contact" hidden>
+      <div class="panel-card">
+        <h2>Contact</h2>
+        <p>Questions about SKU 93565A84? Write to hello@shallow.classic.</p>
+        <button type="button" data-close>Close</button>
+      </div>
+    </section>
+
+    <script src="main.js"></script>
+  </body>
+</html>
